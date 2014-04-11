@@ -3,6 +3,8 @@ description = Modern administration menu
 package = Administration
 core = 7.x
 
+stylesheets[all][] = css/septem_menu.css
+
 files[] = septem_menu.module
 
 version = "7.x-1.0"

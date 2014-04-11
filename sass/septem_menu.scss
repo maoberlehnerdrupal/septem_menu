@@ -1,0 +1,62 @@
+$septem-menu-width: 5em;
+$septem-menu-background: #222;
+
+.page-admin {
+  margin-left: $septem-menu-width;
+}
+
+.septem-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: $septem-menu-width;
+  height: 100%;
+  background: $septem-menu-background;
+  transition: transform 0.3s;
+
+  body:not(.page-admin) & {
+    transform: translate(-100%);
+
+    &:hover {
+      transform: translate(0);
+    }
+  }
+}
+
+.septem-menu__menu {
+  margin: 3em 0 0 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.septem-menu__link {
+  display: block;
+  padding: 0.5em 0;
+  color: #fff;
+  text-indent: -999em;
+  line-height: 0;
+
+  &:hover,
+  &:focus {
+    .septem-menu__icon {
+      fill: #aaa;
+    }
+  }
+}
+
+.septem-menu__icon {
+  display: block;
+  margin: 0 auto;
+  width: $septem-menu-width / 1.85;
+  height: $septem-menu-width / 1.85;
+  transition: fill 0.3s;
+  fill: #efefef;
+}
+
+.septem-menu__puller {
+  position: absolute;
+  top: 0;
+  right: -1em;
+  width: 1em;
+  height: 100%;
+}

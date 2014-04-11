@@ -1,1 +1,91 @@
 <?php
+
+/*function septem_menu_preprocess_html(&$vars) {
+  //$path = drupal_get_path('module', 'slidedown');
+
+  //drupal_add_js($path . '/slidedown.js');
+  //drupal_add_css($path . '/slidedown.css');
+}*/
+
+function septem_menu_page_build(&$page) {
+  $menu = theme(
+    'links',
+    array(
+      'links' => menu_navigation_links('septem-menu'),
+      'attributes' => array(
+        'class'=> array('septem-menu__menu'),
+      ),
+    )
+  );
+
+  $page['page_top']['septem_menu'] = array(
+    '#markup' => theme(
+      'septem_menu_template',
+      array(
+        'menu' => $menu
+      )
+    ),
+  );
+}
+
+function septem_menu_theme() {
+  return array(
+    'septem_menu_template' => array(
+      'template'  => 'templates/septem_menu', // septem_menu.tpl.php
+      'variables' => array('menu' => NULL),
+    ),
+  );
+}
+
+function septem_menu_menu_link(&$vars) {
+  dpm('test');
+  //$element = $vars['element'];
+  //dpm($vars);
+  //dpm('test');
+
+  //return '<li' . drupal_attributes($element['#attributes']) . '>test</li>';
+  /*$element = $vars['element'];
+  $sub_menu = '';
+
+  foreach ($element['#attributes']['class'] as $k => $class) {
+    switch ($class) {
+      case 'leaf':
+        unset($element['#attributes']['class'][$k]);
+        break;
+
+      case 'expanded':
+        $element['#attributes']['class'][$k] = 'menu__item--expanded';
+        break;
+    }
+  }
+
+  $menu_id = 'menu__item--' . $element['#original_link']['mlid'];
+
+  $element['#attributes']['id'][] = $menu_id;
+  $element['#attributes']['class'][] = 'menu__item';
+  $element['#attributes']['class'][] = 'block--' . $element['#original_link']['menu_name'] . '__menu__item';
+  $element['#attributes']['class'][] = 'menu__item--level' . $element['#original_link']['depth'];
+  $element['#attributes']['class'][] = 'block--' . $element['#original_link']['menu_name'] . '__menu__item--level' . $element['#original_link']['depth'];
+  $element['#attributes']['class'][] = $menu_id;
+
+  if ($element['#below']) {
+    $sub_menu = drupal_render($element['#below']);
+  }
+
+  if ($element['#href'] == '<front>' && drupal_is_front_page()) {
+    $element['#attributes']['class'][] = 'active';
+  }
+
+  $link_id = 'menu__link--' . $element['#original_link']['mlid'];
+
+  $element['#localized_options']['attributes']['id'][] = $link_id;
+  $element['#localized_options']['attributes']['class'][] = 'menu__link';
+  $element['#localized_options']['attributes']['class'][] = 'block--' . $element['#original_link']['menu_name'] . '__menu__link';
+  $element['#localized_options']['attributes']['class'][] = 'menu__link--level' . $element['#original_link']['depth'];
+  $element['#localized_options']['attributes']['class'][] = 'block--' . $element['#original_link']['menu_name'] . '__menu__link--level' . $element['#original_link']['depth'];
+  $element['#localized_options']['attributes']['class'][] = $link_id;
+
+  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+
+  return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . '</li>';*/
+}

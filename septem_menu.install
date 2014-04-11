@@ -1,0 +1,11 @@
+<?php
+
+function septem_menu_install() {
+  $menu = array(
+    'menu_name'   => 'septem-menu',
+    'title'       => 'Septem Menu',
+    'description' => 'Septem Administration Menu',
+  );
+
+  menu_save($menu);
+}
