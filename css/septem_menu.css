@@ -44,7 +44,7 @@ body:not(.page-admin) .septem-menu:hover {
 
 .septem-menu__link,
 .septem-menu__sub-link {
-  color: #222222;
+  color: #222222 !important;
   text-decoration: none;
 }
 
@@ -88,7 +88,7 @@ body:not(.page-admin) .septem-menu:hover {
   width: 14em;
   height: 100%;
   background: #efefef;
-  background: rgba(239, 239, 239, 0.9);
+  background: rgba(239, 239, 239, 0.95);
   -webkit-transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
   -webkit-transform: translate(-100%);
@@ -103,6 +103,7 @@ body:not(.page-admin) .septem-menu:hover {
 
 .septem-menu__sub-title {
   margin: 0 0 0.5em 0;
+  color: #222222;
   font-size: 1.5em;
   line-height: 1;
 }
