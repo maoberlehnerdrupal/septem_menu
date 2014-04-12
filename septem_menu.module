@@ -69,10 +69,12 @@ function _septem_menu_get_menu($tree, $class, $sub = FALSE) {
     }
     // add icon to used icons
     $septem_menu_used_icons[$icon] = $icon;
+    // add title attribute if not $sub
+    $title = !$sub ? ' title="' . $link['link']['title'] . '"' : '';
     //
     $menu .= '
       <li class="' . $item_class . '">
-        <a href="' . url($link['link']['href']) . '" class="' . $link_class . '">
+        <a' . $title . ' href="' . url($link['link']['href']) . '" class="' . $link_class . '">
           ' . $link['link']['title'] . '
     ';
     // only add icons to root menu items
