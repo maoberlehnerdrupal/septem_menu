@@ -1,14 +1,19 @@
+/**
+ * Basic styling
+ */
 .page-admin {
-  margin-left: 5em;
+  margin-left: 4.5em;
 }
 
 .septem-menu {
   position: fixed;
   top: 0;
   left: 0;
-  width: 5em;
+  z-index: 1;
+  width: 4.5em;
   height: 100%;
-  background: #222222;
+  font-size: 16px;
+  line-height: 1.5;
   -webkit-transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
 }
@@ -23,37 +28,97 @@ body:not(.page-admin) .septem-menu:hover {
   transform: translate(0);
 }
 
-.septem-menu__menu {
-  margin: 3em 0 0 0;
+.septem-menu__nav {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222222;
+}
+
+.septem-menu__menu,
+.septem-menu__sub-menu {
+  margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
+.septem-menu__link,
+.septem-menu__sub-link {
+  color: #222222;
+  text-decoration: none;
+}
+
+/**
+ * Main menu
+ */
+.septem-menu__menu {
+  padding-top: 2em;
+}
+
 .septem-menu__link {
   display: block;
-  padding: 0.5em 0;
-  color: #fff;
+  padding: 0.75em 0;
   text-indent: -999em;
   line-height: 0;
-}
-.septem-menu__link:hover .septem-menu__icon, .septem-menu__link:focus .septem-menu__icon {
-  fill: #aaa;
 }
 
 .septem-menu__icon {
   display: block;
   margin: 0 auto;
-  width: 2.7027027em;
-  height: 2.7027027em;
+  width: 2.7272727em;
+  height: 2.7272727em;
   -webkit-transition: fill 0.3s;
   transition: fill 0.3s;
+  fill: #aaa;
+}
+.septem-menu__item:hover .septem-menu__icon, .septem-menu__item:focus .septem-menu__icon, .septem-menu__link.is-active .septem-menu__icon {
   fill: #efefef;
 }
 
+/**
+ * Sub menu
+ */
+.septem-menu__sub-wrap {
+  position: absolute;
+  top: 0;
+  left: 4.5em;
+  z-index: -1;
+  padding-top: 2.75em;
+  padding-left: 1.5em;
+  width: 14em;
+  height: 100%;
+  background: #efefef;
+  background: rgba(239, 239, 239, 0.9);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  -webkit-transform: translate(-100%);
+  -ms-transform: translate(-100%);
+  transform: translate(-100%);
+}
+.septem-menu__item:hover .septem-menu__sub-wrap, .septem-menu__item:focus .septem-menu__sub-wrap {
+  -webkit-transform: translate(0);
+  -ms-transform: translate(0);
+  transform: translate(0);
+}
+
+.septem-menu__sub-title {
+  margin: 0 0 0.5em 0;
+  font-size: 1.5em;
+  line-height: 1;
+}
+
+.septem-menu__sub-link:hover, .septem-menu__sub-link:focus {
+  text-decoration: underline;
+}
+
+/**
+ * Puller
+ */
 .septem-menu__puller {
   position: absolute;
   top: 0;
   right: -1em;
+  z-index: -2;
   width: 1em;
   height: 100%;
 }

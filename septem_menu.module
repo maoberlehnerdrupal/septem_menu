@@ -81,7 +81,7 @@ function _septem_menu_get_menu($tree, $class, $sub = FALSE) {
     if (!$sub) $menu .= '<svg class="septem-menu__icon" viewBox="0 0 32 32"><g filter=""><use xlink:href="#' . $icon . '"></use></g></svg>';
     $menu .= '</a>';
     // build sub menu
-    if (!empty($link['below'])) $menu .= _septem_menu_get_menu($link['below'], 'septem-menu__sub-menu', TRUE);
+    if (!empty($link['below'])) $menu .= '<div class="septem-menu__sub-wrap"><h3 class="septem-menu__sub-title">' . $link['link']['title'] . '</h3>' . _septem_menu_get_menu($link['below'], 'septem-menu__sub-menu', TRUE) . '</div>';
     $menu .= '</li>';
   }
   return $menu . '</ul>';
