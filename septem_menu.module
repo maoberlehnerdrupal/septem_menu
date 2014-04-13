@@ -100,9 +100,13 @@ function _septem_menu_get_icons() {
       $icons = $cache->data;
     } else {
       $modules = module_list();
-
       foreach ($modules as $module) {
         $icons .= _septem_menu_get_icons_scan(drupal_get_path('module', $module));
+      }
+
+      $themes = list_themes();
+      foreach ($themes as $theme) {
+        $icons .= _septem_menu_get_icons_scan(drupal_get_path('theme', $theme->name));
       }
 
       cache_set('septem_menu_icons', $icons, 'cache');
