@@ -6,7 +6,7 @@ $septem-menu-background:       #222;
 $septem-menu-link-padding:     0.5em;
 // sub
 $septem-menu-sub-background:   #444;
-$septem-menu-sub-padding-left: 1.5em;
+$septem-menu-sub-padding-horizontal: 1.5em;
 
 /**
  * Basic styling
@@ -93,8 +93,9 @@ $septem-menu-sub-padding-left: 1.5em;
   left: $septem-menu-width;
   z-index: -1;
   padding-top: $septem-menu-padding-top + $septem-menu-link-padding;
-  padding-left: $septem-menu-sub-padding-left;
-  width: 14em;
+  padding-right: $septem-menu-sub-padding-horizontal;
+  padding-left: $septem-menu-sub-padding-horizontal;
+  width: 12em;
   height: 100%;
   background: $septem-menu-sub-background;
   background: fade-out($septem-menu-sub-background, 0.05);
@@ -109,12 +110,21 @@ $septem-menu-sub-padding-left: 1.5em;
 
 .septem-menu__sub-title {
   margin: 0 0 0.5em 0;
-  color: #efefef;
+  color: #fff;
   font-size: 1.5em;
   line-height: 1;
 }
 
+.septem-menu__sub-desc {
+  color: #efefef;
+  font-size: 0.8em;
+}
+
 .septem-menu__sub-link {
+  display: block;
+  padding: 0.25em 0;
+  border-top: 1px dotted lighten($septem-menu-sub-background, 15%);
+
   &:hover,
   &:focus {
     text-decoration: underline;

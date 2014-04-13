@@ -84,8 +84,9 @@ body:not(.page-admin) .septem-menu:hover {
   left: 4.5em;
   z-index: -1;
   padding-top: 1.25em;
+  padding-right: 1.5em;
   padding-left: 1.5em;
-  width: 14em;
+  width: 12em;
   height: 100%;
   background: #444444;
   background: rgba(68, 68, 68, 0.95);
@@ -103,11 +104,21 @@ body:not(.page-admin) .septem-menu:hover {
 
 .septem-menu__sub-title {
   margin: 0 0 0.5em 0;
-  color: #efefef;
+  color: #fff;
   font-size: 1.5em;
   line-height: 1;
 }
 
+.septem-menu__sub-desc {
+  color: #efefef;
+  font-size: 0.8em;
+}
+
+.septem-menu__sub-link {
+  display: block;
+  padding: 0.25em 0;
+  border-top: 1px dotted #6a6a6a;
+}
 .septem-menu__sub-link:hover, .septem-menu__sub-link:focus {
   text-decoration: underline;
 }

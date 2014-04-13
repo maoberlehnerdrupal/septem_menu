@@ -85,6 +85,7 @@ function _septem_menu_get_menu($tree, $class, $sub = FALSE) {
     if (!empty($link['below'])) {
       $menu .= '<div class="septem-menu__sub-wrap">';
       $menu .= '<h3 class="septem-menu__sub-title">' . $link['link']['title'] . '</h3>';
+      $menu .= !empty($link['link']['localized_options']['attributes']['title']) ? '<p class="septem-menu__sub-desc">' . $link['link']['localized_options']['attributes']['title'] . '</p>' : '';
       $menu .= _septem_menu_get_menu($link['below'], 'septem-menu__sub-menu', TRUE);
       $menu .= '</div>';
     }
