@@ -1,0 +1,17 @@
+<svg id="svg-source-image" height="0" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" style="position:absolute; margin-left: -100%"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="septem-menu-icon-image" data-iconmelon="80 icons pack:ff011e8bf64422e09ba4d40c65b65fe2">
+    <g>
+      <g>
+        <path d="M28.729,4.699H3.271C1.467,4.699,0,6.166,0,7.969v16.062c0,1.803,1.467,3.27,3.271,3.27h25.459
+      c1.804,0,3.271-1.467,3.271-3.27V7.969C32,6.166,30.533,4.699,28.729,4.699z M30.132,23.618h-0.935l-8.292-1.946l-5.723-4.286
+      l-3.387,2.049l-4.672-5.301l-4.321,5.301L1.868,23.05V7.969c0-0.772,0.629-1.401,1.402-1.401h25.459
+      c0.773,0,1.402,0.629,1.402,1.401V23.618z"></path>
+      </g>
+      <g>
+        <circle cx="24.979" cy="11.46" r="2.674"></circle>
+      </g>
+    </g>
+  </g>
+</svg>
