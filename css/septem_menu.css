@@ -1,7 +1,7 @@
 /**
  * Basic styling
  */
-.page-admin {
+.septem-menu-visible {
   margin-left: 4.5em;
 }
 
@@ -17,12 +17,12 @@
   -webkit-transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
 }
-body:not(.page-admin) .septem-menu {
+body:not(.septem-menu-visible) .septem-menu {
   -webkit-transform: translate(-100%);
   -ms-transform: translate(-100%);
   transform: translate(-100%);
 }
-body:not(.page-admin) .septem-menu:hover {
+body:not(.septem-menu-visible) .septem-menu:hover {
   -webkit-transform: translate(0);
   -ms-transform: translate(0);
   transform: translate(0);

@@ -6,27 +6,52 @@
 define('SEPTEM_MENU_ICON_PREFIX', 'septem-menu-icon-');
 
 /**
+ * Implements template_preprocess_html().
+ */
+function septem_menu_preprocess_html(&$vars) {
+  // don't hide the menu on admin pages
+  if (path_is_admin(current_path())) {
+    $vars['classes_array'][] = 'septem-menu-visible';
+  }
+}
+
+/**
+ * Implements hook_permission().
+ */
+function septem_menu_permission() {
+  return array(
+    'use septem menu' => array(
+      'title' => t('use septem menu'),
+      'description' => t('Allow users to use the septem (administration) menu.'),
+    ),
+  );
+}
+
+/**
  * Implements hook_page_build().
  */
 function septem_menu_page_build(&$page) {
-  // stores the names of the icons
-  // which are used in the menu
-  global $septem_menu_used_icons;
-  $septem_menu_used_icons = array();
-  // build the menu tree
-  $tree = menu_build_tree('septem-menu');
-  // builds the html code for the menu
-  $menu = _septem_menu_get_menu($tree, 'septem-menu__menu');
-  // add the menu to the top of the page
-  $page['page_top']['septem_menu'] = array(
-    '#markup' => theme(
-      'septem_menu_template',
-      array(
-        'menu' => $menu,
-        'icons' => _septem_menu_get_icons(), // load the icons
-      )
-    ),
-  );
+  // check for permission
+  if (user_access('use septem menu')) {
+    // stores the names of the icons
+    // which are used in the menu
+    global $septem_menu_used_icons;
+    $septem_menu_used_icons = array();
+    // build the menu tree
+    $tree = menu_build_tree('septem-menu');
+    // builds the html code for the menu
+    $menu = _septem_menu_get_menu($tree, 'septem-menu__menu');
+    // add the menu to the top of the page
+    $page['page_top']['septem_menu'] = array(
+      '#markup' => theme(
+        'septem_menu_template',
+        array(
+          'menu' => $menu,
+          'icons' => _septem_menu_get_icons(), // load the icons
+        )
+      ),
+    );
+  }
 }
 
 /**

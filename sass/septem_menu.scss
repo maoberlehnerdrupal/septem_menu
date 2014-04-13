@@ -11,7 +11,7 @@ $septem-menu-sub-padding-horizontal: 1.5em;
 /**
  * Basic styling
  */
-.page-admin {
+.septem-menu-visible {
   margin-left: $septem-menu-width;
 }
 
@@ -26,7 +26,7 @@ $septem-menu-sub-padding-horizontal: 1.5em;
   line-height: 1.5;
   transition: transform 0.3s;
 
-  body:not(.page-admin) & {
+  body:not(.septem-menu-visible) & {
     transform: translate(-100%);
 
     &:hover {
