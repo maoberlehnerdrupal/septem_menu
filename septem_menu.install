@@ -9,6 +9,5 @@ function septem_menu_install() {
     'title'       => 'Septem Menu',
     'description' => 'Septem Administration Menu',
   );
-
   menu_save($menu);
 }
