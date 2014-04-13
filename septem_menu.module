@@ -76,11 +76,15 @@ function _septem_menu_get_menu($tree, $class, $sub = FALSE) {
     $active_class = $_GET['q'] == $link['link']['href'] ? ' is-active' : '';
     // build menu
     $menu .= '<li class="' . $item_class . '">';
+    // add helper element for better diagonal hover experience (top)
+    $menu .= !$sub ? '<span class="diagonal-hover diagonal-hover--top"></span>' : '';
     $menu .= '<a' . $title . ' href="' . url($link['link']['href']) . '" class="' . $link_class . $active_class . '">';
     $menu .= $link['link']['title'];
     // only add icons to root menu items
     $menu .= !$sub ? '<svg class="septem-menu__icon" viewBox="0 0 32 32"><g filter=""><use xlink:href="#' . $icon . '"></use></g></svg>' : '';
     $menu .= '</a>';
+    // add helper element for better diagonal hover experience (bottom)
+    $menu .= !$sub ? '<span class="diagonal-hover diagonal-hover--bottom"></span>' : '';
     // sub menu
     if (!empty($link['below'])) {
       $menu .= '<div class="septem-menu__sub-wrap">';
