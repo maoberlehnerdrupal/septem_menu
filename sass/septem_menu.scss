@@ -1,11 +1,11 @@
 // main
 $septem-menu-width:            4.5em;
 $septem-menu-font-size:        16px;
-$septem-menu-padding-top:      2em;
+$septem-menu-padding-top:      0.75em;
 $septem-menu-background:       #222;
-$septem-menu-link-padding:     0.75em;
+$septem-menu-link-padding:     0.5em;
 // sub
-$septem-menu-sub-background:   #efefef;
+$septem-menu-sub-background:   #444;
 $septem-menu-sub-padding-left: 1.5em;
 
 /**
@@ -51,7 +51,7 @@ $septem-menu-sub-padding-left: 1.5em;
 
 .septem-menu__link,
 .septem-menu__sub-link {
-  color: $septem-menu-background !important;
+  color: #efefef !important;
   text-decoration: none;
 }
 
@@ -109,7 +109,7 @@ $septem-menu-sub-padding-left: 1.5em;
 
 .septem-menu__sub-title {
   margin: 0 0 0.5em 0;
-  color: $septem-menu-background;
+  color: #efefef;
   font-size: 1.5em;
   line-height: 1;
 }

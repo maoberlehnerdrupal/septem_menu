@@ -44,7 +44,7 @@ body:not(.page-admin) .septem-menu:hover {
 
 .septem-menu__link,
 .septem-menu__sub-link {
-  color: #222222 !important;
+  color: #efefef !important;
   text-decoration: none;
 }
 
@@ -52,12 +52,12 @@ body:not(.page-admin) .septem-menu:hover {
  * Main menu
  */
 .septem-menu__menu {
-  padding-top: 2em;
+  padding-top: 0.75em;
 }
 
 .septem-menu__link {
   display: block;
-  padding: 0.75em 0;
+  padding: 0.5em 0;
   text-indent: -999em;
   line-height: 0;
 }
@@ -83,12 +83,12 @@ body:not(.page-admin) .septem-menu:hover {
   top: 0;
   left: 4.5em;
   z-index: -1;
-  padding-top: 2.75em;
+  padding-top: 1.25em;
   padding-left: 1.5em;
   width: 14em;
   height: 100%;
-  background: #efefef;
-  background: rgba(239, 239, 239, 0.95);
+  background: #444444;
+  background: rgba(68, 68, 68, 0.95);
   -webkit-transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
   -webkit-transform: translate(-100%);
@@ -103,7 +103,7 @@ body:not(.page-admin) .septem-menu:hover {
 
 .septem-menu__sub-title {
   margin: 0 0 0.5em 0;
-  color: #222222;
+  color: #efefef;
   font-size: 1.5em;
   line-height: 1;
 }
