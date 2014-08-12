@@ -10,7 +10,7 @@ define('SEPTEM_MENU_ICON_PREFIX', 'septem-menu-icon-');
  */
 function septem_menu_preprocess_html(&$vars) {
   // don't hide the menu on admin pages
-  if (path_is_admin(current_path())) {
+  if (path_is_admin(current_path()) && $vars['page']['#theme'] == 'page') {
     $vars['classes_array'][] = 'septem-menu-visible';
   }
 }
