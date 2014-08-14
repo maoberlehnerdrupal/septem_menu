@@ -5,13 +5,22 @@
   "license": "GPL v2",
   "devDependencies": {
     "gulp": "~3.5.5",
+    "gulp-autoprefixer": "0.0.6",
+    "gulp-cssshrink": "^0.1.4",
+    "gulp-livereload": "~1.2.0",
+    "gulp-minify-css": "^0.3.7",
     "gulp-rename": "~1.2.0",
     "gulp-ruby-sass": "~0.4.0",
-    "gulp-clean": "~0.2.4",
-    "gulp-autoprefixer": "0.0.6",
-    "gulp-uglify": "~0.2.1",
-    "gulp-jshint": "~1.5.0",
-    "gulp-util": "~2.2.14",
-    "gulp-livereload": "~1.2.0"
-  }
+    "gulp-util": "~2.2.14"
+  },
+  "description": "Modern administration menu   https://github.com/maoberlehner/septem_menu",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maoberlehner/septem_menu.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maoberlehner/septem_menu/issues"
+  },
+  "homepage": "https://github.com/maoberlehner/septem_menu"
 }

@@ -1,54 +1,40 @@
-// Load plugins
 var gulp         = require('gulp');
-var sass         = require('gulp-ruby-sass');
 var autoprefixer = require('gulp-autoprefixer');
-var jshint       = require('gulp-jshint');
-var rename       = require('gulp-rename');
-var clean        = require('gulp-clean');
-var gutil        = require('gulp-util');
+var cssshrink    = require('gulp-cssshrink');
 var livereload   = require('gulp-livereload');
+var minifyCSS    = require('gulp-minify-css');
+var rename       = require('gulp-rename');
+var sass         = require('gulp-ruby-sass');
+var gutil        = require('gulp-util');
 
 // Styles
 gulp.task('styles', function () {
-  return gulp.src('sass/septem_menu.scss')
+  return gulp.src('scss/**/*.scss')
     .pipe(sass({ style: 'compact', precision: 7, sourcemap: true }))
     .on('error', gutil.log)
     .pipe(autoprefixer('last 2 versions', 'safari 5', 'ie 8', 'ie 9', 'ios 6', 'android 4'))
     .on('error', gutil.log)
+    .pipe(gulp.dest('css'));
+});
+
+// Minify
+gulp.task('minify', ['styles'], function () {
+  return gulp.src('css/septem_menu.css')
+    .pipe(minifyCSS())
+    .pipe(cssshrink())
+    .pipe(rename(function (path) {
+      path.basename += '.min';
+    }))
     .pipe(gulp.dest('css'))
     .pipe(livereload());
 });
 
-// Scripts
-//gulp.task('scripts', function() {
-//  return gulp.src('src/scripts/**/*.js')
-/*    .pipe(jshint('.jshintrc'))
-    .pipe(jshint.reporter('default'))
-    .pipe(concat('main.js'))
-    .pipe(gulp.dest('dist/scripts'))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(uglify())
-    .pipe(livereload(server))
-    .pipe(gulp.dest('dist/scripts'))
-    .pipe(notify({ message: 'Scripts task complete' }));
-});*/
-
-// Clean
-gulp.task('clean', function () {
-  return gulp.src(['css'/*, 'dist/scripts'*/], {read: false})
-    .pipe(clean());
-});
-
 // Watch
 gulp.task('watch', function () {
-  // Watch .scss files
-  gulp.watch('sass/*.scss', ['styles']);
-
-  // Watch .js files
-  //gulp.watch('src/scripts/**/*.js', ['scripts']);
+  gulp.watch('scss/**/*.scss', ['styles', 'minify']);
 });
 
-// Default task
-gulp.task('default', ['clean'], function () {
-  gulp.start('styles'/*, 'scripts'*/);
+// Default
+gulp.task('default', function () {
+  gulp.start('watch');
 });
