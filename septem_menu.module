@@ -9,9 +9,12 @@ define('SEPTEM_MENU_ICON_PREFIX', 'septem-menu-icon-');
  * Implements template_preprocess_html().
  */
 function septem_menu_preprocess_html(&$vars) {
-  // don't hide the menu on admin pages
-  if (path_is_admin(current_path())) {
-    $vars['classes_array'][] = 'septem-menu-visible';
+  // check for permission
+  if (user_access('use septem menu')) {
+    // don't hide the menu on admin pages
+    if (path_is_admin(current_path()) && $vars['page']['#theme'] == 'page') {
+      $vars['classes_array'][] = 'septem-menu-visible';
+    }
   }
 }
 
@@ -133,7 +136,8 @@ function _septem_menu_get_icons() {
     // load icons from cache if available
     if ($cache = cache_get('septem_menu_icons')) {
       $icons = $cache->data;
-    } else {
+    }
+    else {
       // scan module directories for icons
       $modules = module_list();
       foreach ($modules as $module) {
