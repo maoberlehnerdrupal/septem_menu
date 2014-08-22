@@ -5,6 +5,8 @@ core = 7.x
 
 stylesheets[all][] = css/septem_menu.min.css
 
+dependencies[] = menu
+
 files[] = septem_menu.module
 
 version = "7.x-1.0"
