@@ -4,14 +4,4 @@ package = Administration
 core = 7.x
 
 stylesheets[all][] = css/septem_menu.min.css
-<<<<<<< HEAD
-
 dependencies[] = menu
-
-files[] = septem_menu.module
-
-version = "7.x-1.0"
-core = "7.x"
-project = "septem_menu"
-=======
->>>>>>> 7.x-1.x-dev
